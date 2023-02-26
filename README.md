@@ -6,10 +6,10 @@ Statically linked **sed** container image with [Bash]
 
 ```bash
 ghcr.io/awesome-containers/static-sed:latest
-ghcr.io/awesome-containers/static-sed:3.8
+ghcr.io/awesome-containers/static-sed:4.9
 
 docker.io/awesomecontainers/static-sed:latest
-docker.io/awesomecontainers/static-sed:3.8
+docker.io/awesomecontainers/static-sed:4.9
 ```
 
 Slim statically linked **sed** container image with [Bash] stripped and
@@ -19,10 +19,10 @@ packaged with [UPX]
 
 ```bash
 ghcr.io/awesome-containers/static-sed:latest-slim
-ghcr.io/awesome-containers/static-sed:3.8-slim
+ghcr.io/awesome-containers/static-sed:4.9-slim
 
 docker.io/awesomecontainers/static-sed:latest-slim
-docker.io/awesomecontainers/static-sed:3.8-slim
+docker.io/awesomecontainers/static-sed:4.9-slim
 ```
 
 * <https://www.gnu.org/software/sed/>
