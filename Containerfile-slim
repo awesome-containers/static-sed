@@ -17,6 +17,6 @@ RUN set -xeu; \
     ! ldd sed && :; \
     ./sed --version
 
-# slim static coreutils image
+# slim static sed image
 FROM ghcr.io/awesome-containers/static-bash:$STATIC_BASH_VERSION-slim AS static-bash
 COPY --from=build /src/sed /bin/sed

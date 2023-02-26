@@ -22,6 +22,6 @@ RUN set -xeu; \
     ! ldd sed/sed && :; \
     ./sed/sed --version
 
-# static Curl image
+# static sed image
 FROM ghcr.io/awesome-containers/static-bash:$STATIC_BASH_VERSION
 COPY --from=build /src/sed/sed/sed /bin/sed
