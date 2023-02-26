@@ -19,4 +19,4 @@ RUN set -xeu; \
 
 # slim static sed image
 FROM ghcr.io/awesome-containers/static-bash:$STATIC_BASH_VERSION-slim AS static-bash
-COPY --from=build /src/sed /bin/sed
+COPY --from=build /src/sed/sed /bin/sed
