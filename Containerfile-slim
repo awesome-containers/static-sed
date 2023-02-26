@@ -1,0 +1,22 @@
+# https://github.com/awesome-containers/static-bash
+ARG STATIC_BASH_VERSION=5.2.15
+ARG STATIC_SED_VERSION=3.8
+
+FROM ghcr.io/awesome-containers/static-sed:$STATIC_SED_VERSION AS static-sed
+FROM ghcr.io/awesome-containers/alpine-build-essential:3.17 AS build
+
+WORKDIR /src/sed
+COPY --from=static-sed /bin/sed ./
+
+RUN set -xeu; \
+    strip -s -R .comment -R .gnu.version --strip-unneeded sed; \
+    upx --no-progress --no-color sed; \
+    upx -t --no-progress --no-color sed; \
+    chmod -cR 755 sed; \
+    chown -cR 0:0 sed; \
+    ! ldd sed && :; \
+    ./sed --version
+
+# slim static coreutils image
+FROM ghcr.io/awesome-containers/static-bash:$STATIC_BASH_VERSION-slim AS static-bash
+COPY --from=build /src/sed /bin/sed
